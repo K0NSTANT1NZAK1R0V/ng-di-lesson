@@ -19,11 +19,11 @@ export class TodosService {
   #todos: TodoItem[] = [];
 
   getAll(): TodoItem[] {
-    /* здесь будет ваша реализация */
+    return [];
   }
 
   getById(id: number): TodoItem | undefined {
-    /* здесь будет ваша реализация */
+    return undefined;
   }
 
   add(name: string): void {

@@ -19,18 +19,23 @@ export class TodosService {
   #todos: TodoItem[] = [];
 
   getAll(): TodoItem[] {
-    return [];
+    return this.#todos;
   }
 
   getById(id: number): TodoItem | undefined {
-    return undefined;
+    return this.#todos.find(todo => todo.id === id);
   }
 
   add(name: string): void {
-    /* здесь будет ваша реализация */
+    const id = this.idGenerator.generate();
+    const todo: TodoItem = {
+      id,
+      name: `${this.namePrefix} ${name}`,
+    };
+    this.#todos.push(todo);
   }
 
   remove(id: number): void {
-    /* здесь будет ваша реализация */
+    this.#todos = this.#todos.filter(todo => todo.id !== id);
   }
 }
